@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Inspiration App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Travel App Logo">
+                <h1>Wanderlust</h1>
+            </a>
+            <nav class="nav">
+                <a href="favorites.html" class="nav-btn btn-favorites">
+                    <img src="images/icon-heart.svg" alt="Heart Icon" class="icon"> My Favorites
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="background-image: url('images/hero-travel.png');">
+            <div class="hero-content">
+                <h2>Find Your Next Adventure</h2>
+                <p>Discover beautiful destinations around the world.</p>
+                
+                <div class="controls-container">
+                    <div class="search-box">
+                        <img src="images/icon-search.svg" class="icon" alt="Search">
+                        <input type="text" id="search-input" placeholder="Search a country...">
+                        <button id="search-btn" class="btn btn-primary">Search</button>
+                    </div>
+                    
+                    <div class="filters">
+                        <button id="random-btn" class="btn btn-secondary">
+                            <img src="images/icon-compass.svg" class="icon icon-light" alt="Compass"> Random Destination
+                        </button>
+                        <select id="region-filter" class="select-box">
+                            <option value="">Filter by Region</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Americas">Americas</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section container">
+            <div id="error-message" class="error-message hidden"></div>
+            <div id="destination-container" class="destination-container">
+                <!-- Country Card will be rendered here -->
+                <div class="placeholder-text">
+                    <p>Enter a country, choose a region, or pick a random destination to get started!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Base Scripts -->
+    <script src="scripts/data.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/favorites.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

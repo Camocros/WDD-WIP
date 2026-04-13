@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites - Travel Inspiration App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Travel App Logo">
+                <h1>Wanderlust</h1>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-btn btn-favorites">
+                    <img src="images/icon-compass.svg" alt="Compass Icon" class="icon"> Discover
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="favorites-page">
+        <section class="page-header">
+            <div class="container">
+                <h2>My Saved Destinations</h2>
+                <p>Places you want to visit.</p>
+            </div>
+        </section>
+
+        <section class="favorites-section container">
+            <div id="favorites-list" class="favorites-list grid-container">
+                <!-- Favorite Cards will be rendered here -->
+            </div>
+            <div id="no-favorites-msg" class="placeholder-text hidden">
+                <p>You haven't saved any destinations yet. Go discover!</p>
+                <a href="index.html" class="btn btn-primary mt-2">Discover Destinations</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Base Scripts -->
+    <script src="scripts/favorites.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script>
+        // Inline initialization for favorites page
+        document.addEventListener('DOMContentLoaded', () => {
+            UI.renderFavoritesList();
+            
+            // Listen for changes from other tabs
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'travel_favorites') {
+                    UI.renderFavoritesList();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
